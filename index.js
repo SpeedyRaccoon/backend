@@ -84,18 +84,18 @@ app.post('/sendemail', async (req, res) => {
 
 app.post('/subscribe', async (req, res) => {
 
-    let ipaddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
-    if (ipaddress.indexOf(',') === -1)
-    {
-        ipaddress = ipaddress.substring(0, ipaddress.length);
-    }
-    else
-    {
-        ipaddress = ipaddress.substring(0, ipaddress.indexOf(','));
-    }
+    // let ipaddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+    // if (ipaddress.indexOf(',') === -1)
+    // {
+    //     ipaddress = ipaddress.substring(0, ipaddress.length);
+    // }
+    // else
+    // {
+    //     ipaddress = ipaddress.substring(0, ipaddress.indexOf(','));
+    // }
     const newPost = new Email({
         email: req.body.email,
-        address: ipaddress,
+        // address: ipaddress,
         timestamp: Date.now(),
         message: false,
     })
