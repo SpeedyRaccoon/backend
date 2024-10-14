@@ -148,5 +148,6 @@ app.get('/mainlogo', async (req, res) => {
         }, { new: true });
         post.save();
     }
-    require('fs').createReadStream('icon.png').pipe(res);
+    // require('fs').createReadStream('icon.png').pipe(res);
+    res.json("")
 })
